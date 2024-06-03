@@ -14,3 +14,8 @@ export type WeatherData = {
 
     }
 }
+
+export type Position = {
+    latitude: number | null,
+    longitude: number | null
+}

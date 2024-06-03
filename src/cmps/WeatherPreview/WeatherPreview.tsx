@@ -3,7 +3,7 @@ import { WeatherData } from "../../constants/types";
 import { PreviewWrapper, Title, Wrapper, SubTitle } from "./styles";
 
 type Props = {
-  weatherData: WeatherData;
+  weatherData: WeatherData | undefined;
   search: string;
 };
 

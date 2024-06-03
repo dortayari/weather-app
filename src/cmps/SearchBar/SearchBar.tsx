@@ -1,6 +1,6 @@
 import React, { useState } from 'react'
 import { debounce } from '../../utils/debounce'
-import { Wrapper } from './styles';
+import { Input, Title, Wrapper } from './styles';
 
 type Props = {
     setSearch: React.Dispatch<React.SetStateAction<string>>;
@@ -15,7 +15,7 @@ const SearchBar = ({setSearch}: Props) => {
 
   return (
     <Wrapper>
-        <input type='text' onChange={(e) => handleChange(e)}/>
+        <Input type='text' onChange={(e) => handleChange(e)} placeholder='Tel Aviv' />
     </Wrapper>
   )
 }

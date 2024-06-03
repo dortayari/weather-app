@@ -7,3 +7,9 @@ export const Title = styled.h1`
   color: ${colors.mainColor}
 `;
 
+export const Wrapper = styled.div`
+  display: flex;
+  flex-direction: column;
+`;
+
+
