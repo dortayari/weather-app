@@ -1,10 +1,14 @@
 
 const set = (type: string, item: string) => {
-    localStorage.setItem(type, item)
+    const current = localStorage.getItem(type);
+    const history = current ? JSON.parse(current) : [];
+    history.push(item);
+    localStorage.setItem(type, JSON.stringify(history));
 }
 
 const get = (type: string) => {
-    localStorage.getItem(type)
+    const history = localStorage.getItem(type);
+    return history ? JSON.parse(history) : [];
 }
 
 const remove = (type: string) => {

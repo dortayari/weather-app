@@ -1,5 +1,6 @@
 import { useQuery } from 'react-query';
 import { WeatherData } from '../constants/types';
+import { localStorageService } from '../services/storageService';
 
 interface QueryResult {
   weatherData: WeatherData | undefined;
@@ -19,6 +20,7 @@ const useWeatherQuery = (search: string): QueryResult => {
       if (!response.ok) {
         throw new Error("Network response was not ok");
       }
+      localStorageService.set('history', search)
       return await response.json();
     }
   );

@@ -5,6 +5,7 @@ import { debounce } from "../../utils/debounce";
 import WeatherPreview from "../../cmps/WeatherPreview/WeatherPreview";
 import useWeatherQuery from "../../hooks/useWeatherQuery";
 import Header from "../../cmps/Header/Header";
+import History from "../../cmps/History/History";
 
 type Props = {};
 
@@ -24,6 +25,7 @@ const Homepage = (props: Props) => {
       <Header />
       <SearchBar setSearch={debouncedSetSearch} />
       <WeatherPreview weatherData={weatherData} search={search} />
+      <History />
     </Wrapper>
   );
 };
