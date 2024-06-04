@@ -2,6 +2,7 @@
 const set = (type: string, item: string) => {
     const current = localStorage.getItem(type);
     const history = current ? JSON.parse(current) : [];
+    if(history.includes(item)) return
     history.push(item);
     localStorage.setItem(type, JSON.stringify(history));
 }

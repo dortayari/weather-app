@@ -33,6 +33,13 @@ const CurrentLocation = (props: Props) => {
   const { name, country, region } = location;
   const { condition, temp_c, temp_f } = current;
 
+
+  if(isLoading) return (
+    <div>
+      Loading...
+    </div>
+  )
+
   return (
     <Wrapper>
         {name}, {country} {temp_c}°C 

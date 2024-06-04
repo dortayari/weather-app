@@ -1,18 +1,22 @@
-import React from 'react'
-import { Title, Wrapper } from './styles'
-import CurrentLocation from '../CurrentLocation/CurrentLocation'
+import React from "react";
+import { NavItems, Title, Wrapper } from "./styles";
+import CurrentLocation from "../CurrentLocation/CurrentLocation";
+import History from "../History/History";
 
-type Props = {}
+type Props = {
+  setSearch: React.Dispatch<React.SetStateAction<string>>;
+};
 
-const Header = (props: Props) => {
+const Header = ({setSearch}: Props) => {
   return (
     <Wrapper>
-        <Title>
-            Weather Everywhere
-        </Title>
+      <Title>Weather Everywhere</Title>
+      <NavItems>
         <CurrentLocation />
+        <History setSearch={setSearch}/>
+      </NavItems>
     </Wrapper>
-  )
-}
+  );
+};
 
-export default Header
+export default Header;

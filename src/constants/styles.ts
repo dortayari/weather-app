@@ -1,4 +1,5 @@
 export const colors = {
-    mainColor: '#34ebcc',
-    mainBorder: '#979c97'
+    mainColor: '#fff',
+    mainBorder: '#979c97',
+    headerBg: '#1f1f1f',
 }

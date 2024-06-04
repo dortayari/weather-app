@@ -6,6 +6,8 @@ import WeatherPreview from "../../cmps/WeatherPreview/WeatherPreview";
 import useWeatherQuery from "../../hooks/useWeatherQuery";
 import Header from "../../cmps/Header/Header";
 import History from "../../cmps/History/History";
+import { localStorageService } from "../../services/storageService";
+import { WeatherData } from "../../constants/types";
 
 type Props = {};
 
@@ -13,19 +15,29 @@ const Homepage = (props: Props) => {
   const [search, setSearch] = useState<string>("");
 
   const { weatherData, isLoading, isError, refetch } = useWeatherQuery(search);
-
+  const [lastData , setLastData] = useState<WeatherData>()
   const debouncedSetSearch = debounce(setSearch, 1000);
 
   useEffect(() => {
     if (search) refetch();
+    if(!search && !weatherData) fetchLastData()
   }, [search]);
+
+  const fetchLastData = async () => {
+    if(weatherData) setLastData(weatherData)
+    else if(!weatherData && !lastData) {
+
+      const history = localStorageService.get('history')
+      const lastSearch = history[history.length - 1]
+      lastSearch ? setSearch(lastSearch) : setSearch('Tel Aviv')
+  }
+  }
 
   return (
     <Wrapper>
-      <Header />
+      <Header setSearch={setSearch}/>
       <SearchBar setSearch={debouncedSetSearch} />
-      <WeatherPreview weatherData={weatherData} search={search} />
-      <History />
+      <WeatherPreview weatherData={weatherData ? weatherData : lastData} search={search} />
     </Wrapper>
   );
 };

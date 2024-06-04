@@ -19,8 +19,9 @@ const useWeatherQuery = (search: string): QueryResult => {
       );
       if (!response.ok) {
         throw new Error("Network response was not ok");
+      } else {
+        if(search && !search.includes(',')) localStorageService.set('history', search)
       }
-      localStorageService.set('history', search)
       return await response.json();
     }
   );
