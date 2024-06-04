@@ -1,7 +1,5 @@
 import { useQuery } from 'react-query';
 import { WeatherData } from '../constants/types';
-import { localStorageService } from '../services/storageService';
-import { useState } from 'react';
 import { useHistory } from '../contexts/HistoryContext';
 
 interface QueryResult {

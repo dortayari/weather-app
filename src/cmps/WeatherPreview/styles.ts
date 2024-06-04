@@ -14,7 +14,6 @@ export const PreviewWrapper = styled.div`
   padding: 20px;
   border-radius: 15px;
   flex-direction: column;
-  /* border: 2px ${colors.mainBorder} solid; */
   color: white;
   max-width: fit-content;
   width: 80%;

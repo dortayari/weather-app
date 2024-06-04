@@ -1,4 +1,3 @@
-// HistoryContext.tsx
 import React, { createContext, useReducer, useContext, ReactNode, Dispatch } from 'react';
 import { localStorageService } from '../services/storageService';
 

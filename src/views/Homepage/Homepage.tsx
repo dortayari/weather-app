@@ -19,9 +19,13 @@ const Homepage = (props: Props) => {
   const debouncedSetSearch = debounce(setSearch, 1000);
 
   useEffect(() => {
-    if (search) refetch();
+    if (search) handleRefetch()
     if(!search && !weatherData) fetchLastData()
   }, [search]);
+
+  const handleRefetch = () => {
+    refetch()
+  }
 
   const fetchLastData = async () => {
     if(weatherData) setLastData(weatherData)
