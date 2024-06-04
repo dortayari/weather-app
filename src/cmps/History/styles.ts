@@ -1,5 +1,5 @@
 import styled from "styled-components";
-import { colors } from "../../constants/styles";
+import { breakpoints, colors } from "../../constants/styles";
 
 export const Title = styled.h1`
   font-size: 1.5em;
@@ -34,6 +34,11 @@ export const Button = styled.button`
     background-color: ${colors.mainColor};
     color: ${colors.headerBg};
   }
+
+  
+  @media (max-width: ${breakpoints.xs}) {
+    display: none;
+  }
 `;
 
 export const ModalWrapper = styled.div`
@@ -51,5 +56,6 @@ position: absolute;
 
   &.hide {
     right: -500px;
+    width: 0;
   }
 `;

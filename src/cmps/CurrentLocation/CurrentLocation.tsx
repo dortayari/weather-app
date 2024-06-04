@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { Position } from "../../constants/types";
 import useWeatherQuery from "../../hooks/useWeatherQuery";
-import { Wrapper } from "./styles";
+import { Title, Wrapper } from "./styles";
 
 type Props = {};
 
@@ -33,19 +33,16 @@ const CurrentLocation = (props: Props) => {
   const { name, country, region } = location;
   const { condition, temp_c, temp_f } = current;
 
-
-  if(isLoading) return (
-    <div>
-      Loading...
-    </div>
-  )
+  if (isLoading) return <div>Loading...</div>;
 
   return (
     <Wrapper>
-        {name}, {country} {temp_c}°C 
+      <Title>
+        {name}, {country} {temp_c}°C
         <img alt="icon" src={condition.icon} />
+      </Title>
     </Wrapper>
-  )
+  );
 };
 
 export default CurrentLocation;

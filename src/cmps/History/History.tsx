@@ -7,11 +7,12 @@ import { useHistory } from "../../contexts/HistoryContext";
 
 type Props = {
   setSearch: React.Dispatch<React.SetStateAction<string>>;
+  setIsOpen: React.Dispatch<React.SetStateAction<boolean>>;
+  isOpen: boolean
 };
 
-const History = ({ setSearch }: Props) => {
+const History = ({ setSearch, setIsOpen, isOpen }: Props) => {
   const { state: history } = useHistory();
-  const [isOpen, setIsOpen] = useState<boolean>(false);
 
   const handleHistoryClick = (city: string) => {
     setSearch(city);
@@ -19,7 +20,7 @@ const History = ({ setSearch }: Props) => {
 
   return (
     <Wrapper>
-      <Button onClick={() => setIsOpen(!isOpen)}>History</Button>
+      <Button onClick={() => setIsOpen((prevState: boolean) => !prevState)}>History</Button>
       <ModalWrapper className={!isOpen ? "hide" : ""}>
         {history.map((city: string) => (
           <HistoryPreview

@@ -19,6 +19,7 @@ export const Input = styled.input`
   font-size: 16px;
   box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.1);
   transition: border-color 0.3s ease, box-shadow 0.3s ease;
+  max-width: 400px;
 
   &:focus {
     border-color: #007bff;

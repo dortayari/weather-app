@@ -23,7 +23,6 @@ const moveItemToFront = (arr: [string], item: string) => {
     const itemIdx = arr.findIndex((string:string) => string === item)
     arr.splice(itemIdx, 1)
     arr.unshift(item)
-    console.log("arr", arr)
     localStorage.setItem("history", JSON.stringify(arr));
 }
 
