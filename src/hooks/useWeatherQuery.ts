@@ -1,6 +1,8 @@
 import { useQuery } from 'react-query';
 import { WeatherData } from '../constants/types';
 import { localStorageService } from '../services/storageService';
+import { useState } from 'react';
+import { useHistory } from '../contexts/HistoryContext';
 
 interface QueryResult {
   weatherData: WeatherData | undefined;
@@ -10,6 +12,9 @@ interface QueryResult {
 }
 
 const useWeatherQuery = (search: string): QueryResult => {
+
+  const { dispatch } = useHistory();
+
   const { data: weatherData, isLoading, isError, refetch } = useQuery<WeatherData>(
     ["weather", search],
     async () => {
@@ -19,12 +24,14 @@ const useWeatherQuery = (search: string): QueryResult => {
       );
       if (!response.ok) {
         throw new Error("Network response was not ok");
-      } else {
-        if(search && !search.includes(',')) localStorageService.set('history', search)
+      }
+      if (search && !search.includes(',')) {
+        dispatch({ type: 'ADD_HISTORY', payload: search });
       }
       return await response.json();
     }
   );
+  
 
   return { weatherData, isLoading, isError, refetch };
 };
