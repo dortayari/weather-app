@@ -1,5 +1,5 @@
 import styled from "styled-components";
-import { breakpoints, colors } from "../../constants/styles";
+import { breakpoints, colors, fontsSize } from "../../constants/styles";
 
 export const Wrapper = styled.div`
   display: flex;
@@ -12,16 +12,16 @@ export const Wrapper = styled.div`
 `;
 
 export const Title = styled.h1`
-  font-size: 1.5em;
+  font-size: ${fontsSize.titleM};
   text-align: center;
   color: ${colors.mainColor};
 
   @media (max-width: ${breakpoints.s}) {
-    font-size: 1.1em;
+    font-size: ${fontsSize.titleS};
   }
 
   @media (max-width: ${breakpoints.xs}) {
-    font-size: 0.9em;
+    font-size: ${fontsSize.titleXS};
   }
 `;
 

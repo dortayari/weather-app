@@ -1,8 +1,6 @@
-import React, { useEffect, useState } from "react";
-import { localStorageService } from "../../services/storageService";
+import React from "react";
 import { Button, ModalWrapper, Wrapper } from "./styles";
 import HistoryPreview from "../HistoryPreview/HistoryPreview";
-import useWeatherQuery from "../../hooks/useWeatherQuery";
 import { useHistory } from "../../contexts/HistoryContext";
 
 type Props = {

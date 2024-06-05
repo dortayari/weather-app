@@ -1,6 +1,5 @@
-import React, { useState } from 'react'
-import { debounce } from '../../utils/debounce'
-import { Input, Title, Wrapper } from './styles';
+import React from 'react'
+import { Input, Wrapper } from './styles';
 
 type Props = {
     setSearch: React.Dispatch<React.SetStateAction<string>>;

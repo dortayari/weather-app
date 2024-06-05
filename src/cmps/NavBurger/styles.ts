@@ -1,11 +1,6 @@
 import styled from "styled-components";
-import { breakpoints, colors } from "../../constants/styles";
+import { breakpoints } from "../../constants/styles";
 
-export const Title = styled.h1`
-  font-size: 1.5em;
-  text-align: center;
-  color: ${colors.mainColor};
-`;
 
 export const Wrapper = styled.div`
   flex-direction: column;

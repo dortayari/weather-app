@@ -9,3 +9,11 @@ export const breakpoints = {
     s: '800px',
     m: '1200px',
 }
+
+export const fontsSize = {
+    titleS: '1.1em',
+    titleXS: '0.9em',
+    titleM: '1.5em'
+}
+
+

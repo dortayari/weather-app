@@ -6,10 +6,6 @@ export const Wrapper = styled.div`
   padding-top: 40px;
 `;
 
-export const Title = styled.h2`
-  color: black;
-`;
-
 export const Input = styled.input`
   width: 50%;
   padding: 10px;
