@@ -1,11 +1,12 @@
 import React from "react";
-import { WeatherData } from "../../constants/types";
-import { PreviewWrapper, Title, Wrapper, SubTitle } from "./styles";
-
+import { TempType, WeatherData } from "../../constants/types";
+import { PreviewWrapper, Title, Wrapper, SubTitle, Button } from "./styles";
+import TemperaturePreview from "../TemperaturePreview/TemperaturePreview";
 type Props = {
   weatherData: WeatherData | undefined;
   search: string;
 };
+
 
 const WeatherPreview = ({ search,weatherData }: Props) => {
 
@@ -24,7 +25,7 @@ const WeatherPreview = ({ search,weatherData }: Props) => {
 
   const { location, current } = weatherData;
   const { name , country,region} = location;
-  const { condition , temp_c, temp_f} = current;
+  const { condition , temp_c, temp_f, wind_kph, wind_mph} = current;
   return (
     <Wrapper>
       <PreviewWrapper>
@@ -33,7 +34,8 @@ const WeatherPreview = ({ search,weatherData }: Props) => {
         <p>{condition.text}</p>
         <img alt="weather" src={condition.icon} />
         </SubTitle>
-        <p>Temperature: {temp_c}°C</p>
+        <TemperaturePreview temp_c={temp_c} 
+        temp_f={temp_f} wind_kph={wind_kph} wind_mph={wind_mph}/>
       </PreviewWrapper>
     </Wrapper>
   );
