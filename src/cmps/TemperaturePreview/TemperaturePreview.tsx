@@ -33,7 +33,7 @@ const TemperaturePreview = ({ temp_c, temp_f, wind_kph }: Props) => {
           )
         }
       >
-        Switch to {tempType === "celcius" ? "Farenheit" : "celcius"}
+        Switch to {tempType === "celcius" ? "farenheit" : "celcius"}
       </Button>
     </Wrapper>
   );

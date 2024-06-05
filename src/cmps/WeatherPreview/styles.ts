@@ -56,26 +56,6 @@ export const SubTitle = styled.h2`
   }
 `;
 
-
-export const Button = styled.button`
-  align-self: center;
-  border: 2px ${colors.mainColor} solid;
-  padding-right: 10px;
-  padding-left: 10px;
-  height: 40px;
-  border-radius: 15px;
-  font-size: 1em;
-  background-color: inherit;
-  color: ${colors.mainColor};
-
-  &:hover {
-    cursor: pointer; 
-    transition-duration: 300ms;
-    background-color: ${colors.mainColor};
-    color: ${colors.headerBg};
-  }
-`;
-
 export const Image = styled.img`
   width: 20px;
   height: 30px;

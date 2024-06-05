@@ -1,6 +1,6 @@
 import React from "react";
 import { TempType, WeatherData } from "../../constants/types";
-import { PreviewWrapper, Title, Wrapper, SubTitle, Button } from "./styles";
+import { PreviewWrapper, Title, Wrapper, SubTitle } from "./styles";
 import TemperaturePreview from "../TemperaturePreview/TemperaturePreview";
 type Props = {
   weatherData: WeatherData | undefined;

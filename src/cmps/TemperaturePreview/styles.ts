@@ -11,7 +11,7 @@ export const Wrapper = styled.div`
 export const TempWrapper = styled.div`
   display: flex;
   align-items: center;
-  gap: 30px;
+  gap: 20px;
 `;
 
 export const TempPreview = styled.div`

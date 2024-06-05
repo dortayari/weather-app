@@ -1,4 +1,4 @@
-export type WeatherData = {
+export interface WeatherData {
     location: {
         country: string,
         name: string,
@@ -16,7 +16,7 @@ export type WeatherData = {
     }
 }
 
-export type Position = {
+export interface Position {
     latitude: number | null,
     longitude: number | null
 }
